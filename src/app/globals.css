@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+  .full {
+    @apply w-full h-full;
+  }
+  .basic-transition {
+    transition: all 250ms;
+  }
+}

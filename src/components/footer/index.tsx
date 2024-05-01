@@ -1,7 +1,7 @@
+import Link from 'next/link'
 import { BasketIcon } from '@/components/icons/basket'
 import { InfoIcon } from '../icons/info'
 import { GridIcon } from '../icons/grid'
-import Link from 'next/link'
 
 const elements = [
   {
@@ -26,10 +26,10 @@ const elements = [
 
 export default function Footer(): JSX.Element {
   return (
-    <footer className="flex">
-      {elements.map(({ link, key, icon }) => (
+    <footer className="flex w-full h-[60px] fixed bottom-0 left-0 bg-slate-100">
+      {elements.map(({ link, key, icon }, index) => (
         <Link
-          className="block w-full hover:bg-slate-200 h-auto"
+          className="full hover:bg-slate-200 flex-center basic-transition"
           href={link}
           key={key}
         >

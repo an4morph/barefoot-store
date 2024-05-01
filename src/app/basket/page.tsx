@@ -1,7 +1,8 @@
 export default function BasketPage(): JSX.Element {
   return (
-    <div>
+    <div className="container">
       Basket
+      <div></div>
     </div>
   )
 }
