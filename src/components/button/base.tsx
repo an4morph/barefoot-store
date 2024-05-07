@@ -15,7 +15,7 @@ export function BaseButton({
       type={type}
       className={cn(
         'flex-center py-2 px-4',
-        'hover:brightness-95',
+        'hover:brightness-95 basic-transition',
         { 'active:translate-y-px': !noActiveTransalte },
         className
       )}
