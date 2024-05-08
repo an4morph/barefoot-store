@@ -16,7 +16,7 @@ export function BaseButton({
       type={type}
       className={cn(
         'flex-center py-2 px-4 rounded-md',
-        'hover-for-transparent after:basic-transition',
+        'hoverbg-black/5 after:basic-transition',
         { 'active:translate-y-px': !noActiveTransalte },
         className
       )}

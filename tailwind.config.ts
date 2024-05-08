@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss"
+import plugin from "tailwindcss/plugin";
+import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette"
 
 const config: Config = {
   content: [
@@ -17,6 +19,21 @@ const config: Config = {
       padding: '1rem'
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ theme, addUtilities, matchUtilities }) => {
+      matchUtilities({
+        hoverbg: (value) => ({
+          '@apply relative overflow-hidden [&>*]:z-10': '',
+          '&:after': {
+            '@apply content-[""] absolute top-0 left-0 w-full h-full': '',
+          },
+          '&:hover:after': {
+            backgroundColor: value,
+            '@apply z-0': '',
+          }
+        })
+      }, { values: flattenColorPalette(theme('colors')), type: 'color' })
+    })
+  ],
 };
 export default config;

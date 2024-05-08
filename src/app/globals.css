@@ -21,9 +21,4 @@
   .basic-transition {
     transition: all 250ms;
   }
-  /* this need z-index for child. Sometimes it needs more than 10 */
-  .hover-for-transparent {
-    @apply after:content-[""] after:absolute-full hover:after:bg-black/5;
-    @apply relative overflow-hidden [&>*]:z-10;
-  }
 }
