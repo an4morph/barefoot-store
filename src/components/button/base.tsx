@@ -7,6 +7,7 @@ export function BaseButton({
   noActiveTransalte,
   type = 'button',
   children,
+  hoverColor,
   className,
   ...props
 }: BaseButtonProps): JSX.Element {
@@ -14,8 +15,8 @@ export function BaseButton({
     <button
       type={type}
       className={cn(
-        'flex-center py-2 px-4',
-        'hover:brightness-95 basic-transition',
+        'flex-center py-2 px-4 rounded-md',
+        'hover-for-transparent after:basic-transition',
         { 'active:translate-y-px': !noActiveTransalte },
         className
       )}

@@ -4,4 +4,5 @@ export interface BaseButtonProps {
   link?: string
   className?: string
   noActiveTransalte?: boolean
+  hoverColor?: string
 }

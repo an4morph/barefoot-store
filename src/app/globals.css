@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    @apply text-slate-900;
+  }
+}
+
 @layer components {
   .flex-center {
     @apply flex justify-center items-center;
@@ -9,7 +15,15 @@
   .full {
     @apply w-full h-full;
   }
+  .absolute-full {
+    @apply absolute top-0 left-0 w-full h-full;
+  }
   .basic-transition {
     transition: all 250ms;
+  }
+  /* this need z-index for child. Sometimes it needs more than 10 */
+  .hover-for-transparent {
+    @apply after:content-[""] after:absolute-full hover:after:bg-black/5;
+    @apply relative overflow-hidden [&>*]:z-10;
   }
 }
