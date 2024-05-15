@@ -11,11 +11,10 @@ export function BaseButton({
   className,
   ...props
 }: BaseButtonProps): JSX.Element {
-  const button = (
-    <button
-      type={type}
+  const innerElement = (
+    <span
       className={cn(
-        'flex-center py-2 px-4 rounded-md',
+        'flex-center py-2 px-4 rounded-md w-full',
         'hoverbg-black/5 after:basic-transition',
         { 'active:translate-y-px': !noActiveTransalte },
         className
@@ -23,13 +22,15 @@ export function BaseButton({
       {...props}
     >
       {children}
-    </button>
+    </span>
   )
   return link ? (
     <Link className="flex" href={link}>
-      {button}
+      {innerElement}
     </Link>
   ) : (
-    button
+    <button type={type} {...props}>
+      {innerElement}
+    </button>
   )
 }
