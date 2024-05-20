@@ -26,7 +26,7 @@ const elements = [
 
 export default function Footer(): JSX.Element {
   return (
-    <footer className="flex w-full h-[60px] fixed bottom-0 left-0 bg-slate-100">
+    <footer className="flex w-full h-[60px] fixed z-50 bottom-0 left-0 bg-slate-100">
       {elements.map(({ link, key, icon }, index) => (
         <Link
           className="full hover:bg-slate-200 flex-center basic-transition"
